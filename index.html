@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium adult toys and 18+ products in Kuwait. Discreet delivery, secure payment via WAMD. Shop men's and women's pleasure products.">
+    <meta name="keywords" content="adult toys Kuwait, sex toys Kuwait, 18+ products, adult products Kuwait, pleasure store Kuwait">
+    <title>Pleasure Store Kuwait | Premium Adult Products</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">
+                <i class="fas fa-heart"></i>
+                PLEASURE STORE
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link active">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="products-men.html" class="nav__link">Men</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="products-women.html" class="nav__link">Women</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+
+            <div class="nav__actions">
+                <div class="nav__age-badge">18+</div>
+                <a href="cart.html" class="nav__cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="nav__cart-count" id="cart-count">0</span>
+                </a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <section class="hero">
+            <div class="hero__overlay"></div>
+            <div class="hero__content container">
+                <h1 class="hero__title">Premium Adult Products<br>in Kuwait</h1>
+                <p class="hero__subtitle">Discreet delivery &bull; Secure payment &bull; Quality guaranteed</p>
+                <div class="hero__buttons">
+                    <a href="products-men.html" class="btn btn--primary">
+                        <i class="fas fa-mars"></i> Shop Men
+                    </a>
+                    <a href="products-women.html" class="btn btn--secondary">
+                        <i class="fas fa-venus"></i> Shop Women
+                    </a>
+                </div>
+            </div>
+            <div class="hero__features">
+                <div class="hero__feature">
+                    <i class="fas fa-truck"></i>
+                    <span>Free Delivery</span>
+                </div>
+                <div class="hero__feature">
+                    <i class="fas fa-box"></i>
+                    <span>Discreet Packaging</span>
+                </div>
+                <div class="hero__feature">
+                    <i class="fas fa-headset"></i>
+                    <span>24/7 Support</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories section" id="categories">
+            <div class="container">
+                <h2 class="section__title">Shop by Category</h2>
+                <div class="categories__grid">
+                    <a href="products-men.html" class="category-card category-card--men">
+                        <div class="category-card__icon">
+                            <i class="fas fa-mars"></i>
+                        </div>
+                        <h3 class="category-card__title">Men's Collection</h3>
+                        <p class="category-card__count"><span id="men-product-count">0</span> Products</p>
+                        <span class="category-card__btn">Explore <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="products-women.html" class="category-card category-card--women">
+                        <div class="category-card__icon">
+                            <i class="fas fa-venus"></i>
+                        </div>
+                        <h3 class="category-card__title">Women's Collection</h3>
+                        <p class="category-card__count"><span id="women-product-count">0</span> Products</p>
+                        <span class="category-card__btn">Explore <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="products section" id="featured-products">
+            <div class="container">
+                <h2 class="section__title">Featured Products</h2>
+                <div class="products__grid" id="products-grid">
+                    <!-- Products loaded via JS -->
+                </div>
+                <div class="products__actions">
+                    <a href="products-men.html" class="btn btn--outline">View All Men's <i class="fas fa-arrow-right"></i></a>
+                    <a href="products-women.html" class="btn btn--outline">View All Women's <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features section" id="why-us">
+            <div class="container">
+                <h2 class="section__title">Why Choose Us</h2>
+                <div class="features__grid">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <h3 class="feature-card__title">Discreet Packaging</h3>
+                        <p class="feature-card__desc">All orders are shipped in plain, unmarked packaging. Your privacy is our priority.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <h3 class="feature-card__title">Secure Payment</h3>
+                        <p class="feature-card__desc">Pay safely with WAMD — fast, trusted, and secure local payment method.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-truck-fast"></i>
+                        </div>
+                        <h3 class="feature-card__title">Fast Delivery</h3>
+                        <p class="feature-card__desc">Same-day delivery in Kuwait. Free shipping on all orders.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="feature-card__title">Premium Quality</h3>
+                        <p class="feature-card__desc">We stock only top-quality, body-safe products from trusted brands.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials section" id="testimonials">
+            <div class="container">
+                <h2 class="section__title">What Our Customers Say</h2>
+                <div class="testimonials__grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-card__text">"Fast and completely discreet delivery. The product quality exceeded my expectations. Will definitely order again!"</p>
+                        <div class="testimonial-card__author">
+                            <span class="testimonial-card__name">Ahmed K.</span>
+                            <span class="testimonial-card__location">Kuwait City</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-card__text">"The packaging was so discreet, I couldn't tell what was inside. Very professional service. Thank you!"</p>
+                        <div class="testimonial-card__author">
+                            <span class="testimonial-card__name">Sara M.</span>
+                            <span class="testimonial-card__location">Hawalli</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-card__text">"Great selection and competitive prices. The WAMD payment was super easy. Highly recommended!"</p>
+                        <div class="testimonial-card__author">
+                            <span class="testimonial-card__name">Mohammed R.</span>
+                            <span class="testimonial-card__location">Salmiya</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="age-notice section">
+            <div class="container">
+                <div class="age-notice__content">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>This website contains age-restricted content. By entering, you confirm you are at least <strong>18 years old</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__about">
+                    <a href="index.html" class="footer__logo">
+                        <i class="fas fa-heart"></i> PLEASURE STORE
+                    </a>
+                    <p class="footer__desc">Kuwait's trusted online store for premium adult products. Discreet, secure, and reliable.</p>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__heading">Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products-men.html">Men's Products</a></li>
+                        <li><a href="products-women.html">Women's Products</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h4 class="footer__heading">Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> <a href="https://wa.me/96594091673">+965 9409 1673</a></li>
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/96594091673">WhatsApp</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:support@kwtnews.com">support@kwtnews.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer__payment">
+                    <h4 class="footer__heading">Payment Methods</h4>
+                    <div class="footer__payment-icons">
+                        <div class="payment-badge">
+                            <i class="fas fa-wallet"></i>
+                            <span>WAMD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Pleasure Store Kuwait. All rights reserved.</p>
+                <div class="footer__age">
+                    <i class="fas fa-exclamation-circle"></i> 18+ Only
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data/products-men.js"></script>
+    <script src="data/products-women.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/reviews.js"></script>
+</body>
+</html>

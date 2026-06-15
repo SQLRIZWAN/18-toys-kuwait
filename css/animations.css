@@ -1,0 +1,106 @@
+/* Animations */
+
+/* Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide In */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Pulse */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Shake */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+/* Spin */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Apply animations */
+.checkout-step.active {
+    animation: fadeIn 0.4s ease;
+}
+
+.progress-step.active .step-circle {
+    animation: pulse 0.5s ease;
+}
+
+.progress-step.completed .step-circle {
+    animation: pulse 0.3s ease;
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    animation: shake 0.5s ease;
+}
+
+/* Hover animations */
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.summary-item:hover {
+    transform: translateX(5px);
+}
+
+/* Transitions */
+.summary-item {
+    transition: transform 0.3s ease;
+}
+
+/* Loading spinner */
+.fa-spin {
+    animation: spin 1s linear infinite;
+}

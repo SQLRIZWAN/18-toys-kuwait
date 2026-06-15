@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete your order at Pleasure Store Kuwait - Discreet delivery across Kuwait">
+    <meta name="keywords" content="checkout, adult toys, Kuwait, pleasure store, discreet delivery">
+    <meta name="author" content="Pleasure Store Kuwait">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Checkout | Pleasure Store Kuwait</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-heart"></i>
+                    <span>PLEASURE STORE</span>
+                </a>
+
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <a href="cart.html" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cart-count">0</span>
+                    </a>
+                    <span class="age-badge">18+</span>
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobile-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </div>
+
+    <!-- Checkout Steps Progress Bar -->
+    <section class="checkout-progress-section">
+        <div class="container">
+            <div class="checkout-progress">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-circle">
+                        <span class="step-number">1</span>
+                        <i class="fas fa-check step-check"></i>
+                    </div>
+                    <span class="step-label">Customer Info</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-circle">
+                        <span class="step-number">2</span>
+                        <i class="fas fa-check step-check"></i>
+                    </div>
+                    <span class="step-label">Delivery Address</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-circle">
+                        <span class="step-number">3</span>
+                        <i class="fas fa-check step-check"></i>
+                    </div>
+                    <span class="step-label">Payment</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="4">
+                    <div class="step-circle">
+                        <span class="step-number">4</span>
+                        <i class="fas fa-check step-check"></i>
+                    </div>
+                    <span class="step-label">Confirm Order</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Checkout Content -->
+    <main class="checkout-main">
+        <div class="container">
+            <div class="checkout-layout">
+
+                <!-- Left Column - Forms -->
+                <div class="checkout-forms">
+
+                    <!-- Step 1: Customer Information -->
+                    <div class="checkout-step active" id="step-1">
+                        <div class="step-header">
+                            <h2><i class="fas fa-user"></i> Customer Information</h2>
+                            <p>Please enter your contact details</p>
+                        </div>
+                        <form id="customer-form" class="checkout-form">
+                            <div class="form-group">
+                                <label for="full-name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="full-name" name="fullName" placeholder="Enter your full name" required>
+                                <span class="error-message" id="name-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number <span class="required">*</span></label>
+                                <div class="phone-input-wrapper">
+                                    <span class="phone-prefix">+965</span>
+                                    <input type="tel" id="phone" name="phone" placeholder="Enter 8-digit number" pattern="[0-9]{8}" maxlength="8" required>
+                                </div>
+                                <span class="error-message" id="phone-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email (Optional)</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com">
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary btn-continue">
+                                    Continue <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 2: Delivery Address -->
+                    <div class="checkout-step" id="step-2">
+                        <div class="step-header">
+                            <h2><i class="fas fa-map-marker-alt"></i> Delivery Address</h2>
+                            <p>Where should we deliver your order?</p>
+                        </div>
+                        <form id="address-form" class="checkout-form">
+                            <div class="form-group">
+                                <label for="full-address">Full Address <span class="required">*</span></label>
+                                <textarea id="full-address" name="fullAddress" rows="3" placeholder="Building, Floor, Apartment, Street details..." required></textarea>
+                                <span class="error-message" id="address-error"></span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="area">Area / District</label>
+                                    <input type="text" id="area" name="area" placeholder="e.g., Salmiya">
+                                </div>
+                                <div class="form-group">
+                                    <label for="block">Block Number</label>
+                                    <input type="text" id="block" name="block" placeholder="e.g., 5">
+                                </div>
+                            </div>
+
+                            <!-- Location Map -->
+                            <div class="form-group map-group">
+                                <label>Select Delivery Location on Map</label>
+                                <div class="map-container">
+                                    <div id="location-map" class="checkout-map"></div>
+                                    <div class="map-overlay">
+                                        <button type="button" class="btn btn-secondary btn-use-location" id="use-my-location">
+                                            <i class="fas fa-crosshairs"></i> Use My Location
+                                        </button>
+                                    </div>
+                                    <div class="selected-location" id="selected-location" style="display:none;">
+                                        <i class="fas fa-map-pin"></i>
+                                        <span id="location-coords"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary btn-back" data-back="1">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                                <button type="submit" class="btn btn-primary btn-continue">
+                                    Continue <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 3: Payment -->
+                    <div class="checkout-step" id="step-3">
+                        <div class="step-header">
+                            <h2><i class="fas fa-credit-card"></i> Payment</h2>
+                            <p>Complete payment via WAMD</p>
+                        </div>
+                        <form id="payment-form" class="checkout-form">
+                            <!-- Payment Method -->
+                            <div class="payment-method selected">
+                                <div class="payment-method-header">
+                                    <input type="radio" name="paymentMethod" value="wamd" id="wamd-radio" checked>
+                                    <label for="wamd-radio">
+                                        <i class="fas fa-wallet"></i>
+                                        <span>WAMD</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- WAMD Details Box -->
+                            <div class="wamd-details-box">
+                                <div class="wamd-header">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    <h3>WAMD Payment Details</h3>
+                                </div>
+                                <div class="wamd-info">
+                                    <div class="wamd-row">
+                                        <span class="wamd-label">Account Number:</span>
+                                        <span class="wamd-value" id="wamd-number">94091673</span>
+                                        <button type="button" class="btn-copy" id="copy-wamd-number" title="Copy number">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <div class="wamd-row">
+                                        <span class="wamd-label">Account Name:</span>
+                                        <span class="wamd-value">MOHAMMAD RIZWAN</span>
+                                    </div>
+                                    <div class="wamd-row total-row">
+                                        <span class="wamd-label">Amount to Pay:</span>
+                                        <span class="wamd-value wamd-amount" id="wamd-amount">0.000 KD</span>
+                                    </div>
+                                </div>
+                                <div class="wamd-instructions">
+                                    <h4><i class="fas fa-info-circle"></i> Instructions:</h4>
+                                    <ol>
+                                        <li>Open WAMD app on your phone</li>
+                                        <li>Send payment to number: <strong>94091673</strong></li>
+                                        <li>Enter the exact amount shown above</li>
+                                        <li>Take a screenshot of the confirmation</li>
+                                        <li>Upload the screenshot below</li>
+                                        <li>Enter the transaction ID from WAMD</li>
+                                    </ol>
+                                </div>
+                            </div>
+
+                            <!-- Upload Payment Screenshot -->
+                            <div class="form-group">
+                                <label>Payment Screenshot <span class="required">*</span></label>
+                                <div class="upload-area" id="upload-area">
+                                    <input type="file" id="payment-screenshot" accept="image/*" hidden>
+                                    <div class="upload-placeholder" id="upload-placeholder">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Drag & drop screenshot here or <span class="upload-link">click to browse</span></p>
+                                        <span class="upload-hint">PNG, JPG, WEBP (max 5MB)</span>
+                                    </div>
+                                    <div class="upload-preview" id="upload-preview" style="display:none;">
+                                        <img id="preview-image" src="" alt="Payment screenshot">
+                                        <button type="button" class="btn-remove-image" id="remove-image">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <span class="error-message" id="screenshot-error"></span>
+                            </div>
+
+                            <!-- Transaction ID -->
+                            <div class="form-group">
+                                <label for="transaction-id">WAMD Transaction ID <span class="required">*</span></label>
+                                <input type="text" id="transaction-id" name="transactionId" placeholder="Enter transaction ID from WAMD" required>
+                                <span class="error-message" id="transaction-error"></span>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary btn-back" data-back="2">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                                <button type="submit" class="btn btn-primary btn-continue">
+                                    Continue <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 4: Review & Confirm -->
+                    <div class="checkout-step" id="step-4">
+                        <div class="step-header">
+                            <h2><i class="fas fa-clipboard-check"></i> Review & Confirm</h2>
+                            <p>Please review your order before placing</p>
+                        </div>
+
+                        <div class="review-sections">
+                            <!-- Order Review -->
+                            <div class="review-section">
+                                <h3><i class="fas fa-box"></i> Order Summary</h3>
+                                <div class="review-items" id="review-items">
+                                    <!-- Populated by JS -->
+                                </div>
+                            </div>
+
+                            <!-- Customer Review -->
+                            <div class="review-section">
+                                <h3><i class="fas fa-user"></i> Customer Details</h3>
+                                <div class="review-detail">
+                                    <span class="review-label">Name:</span>
+                                    <span class="review-value" id="review-name"></span>
+                                </div>
+                                <div class="review-detail">
+                                    <span class="review-label">Phone:</span>
+                                    <span class="review-value" id="review-phone"></span>
+                                </div>
+                                <div class="review-detail">
+                                    <span class="review-label">Email:</span>
+                                    <span class="review-value" id="review-email"></span>
+                                </div>
+                            </div>
+
+                            <!-- Address Review -->
+                            <div class="review-section">
+                                <h3><i class="fas fa-map-marker-alt"></i> Delivery Address</h3>
+                                <p class="review-address" id="review-address"></p>
+                                <a href="#" class="map-link" id="review-map-link" target="_blank">
+                                    <i class="fas fa-map"></i> View on Map
+                                </a>
+                            </div>
+
+                            <!-- Payment Review -->
+                            <div class="review-section">
+                                <h3><i class="fas fa-money-bill-wave"></i> Payment Confirmation</h3>
+                                <div class="review-detail">
+                                    <span class="review-label">Method:</span>
+                                    <span class="review-value">WAMD</span>
+                                </div>
+                                <div class="review-detail">
+                                    <span class="review-label">Transaction ID:</span>
+                                    <span class="review-value" id="review-transaction"></span>
+                                </div>
+                                <div class="review-screenshot">
+                                    <span class="review-label">Screenshot:</span>
+                                    <img id="review-screenshot" src="" alt="Payment proof">
+                                </div>
+                            </div>
+
+                            <!-- Terms -->
+                            <div class="terms-section">
+                                <label class="checkbox-wrapper">
+                                    <input type="checkbox" id="terms-checkbox" required>
+                                    <span class="checkmark"></span>
+                                    <span class="terms-text">I confirm the order details are correct and I agree to the <a href="#">terms & conditions</a></span>
+                                </label>
+                                <span class="error-message" id="terms-error"></span>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary btn-back" data-back="3">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                                <button type="button" class="btn btn-primary btn-place-order" id="place-order-btn">
+                                    <i class="fas fa-lock"></i> Place Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Order Summary -->
+                <aside class="order-summary-sidebar">
+                    <div class="order-summary-card">
+                        <h3><i class="fas fa-shopping-bag"></i> Order Summary</h3>
+                        <div class="summary-items" id="summary-items">
+                            <!-- Populated by JS -->
+                        </div>
+                        <div class="summary-totals">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span id="summary-subtotal">0.000 KD</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Delivery Fee</span>
+                                <span class="free-delivery">Free</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total</span>
+                                <span id="summary-total">0.000 KD</span>
+                            </div>
+                        </div>
+                        <div class="coupon-section">
+                            <div class="coupon-input-wrapper">
+                                <input type="text" id="coupon-input" placeholder="Enter coupon code">
+                                <button type="button" class="btn btn-secondary btn-apply-coupon" id="apply-coupon">
+                                    Apply
+                                </button>
+                            </div>
+                            <span class="coupon-message" id="coupon-message"></span>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- WAMD Payment Modal -->
+    <div class="modal-overlay" id="wamd-modal" style="display:none;">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-wamd-icon">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <h2>WAMD Payment</h2>
+                <p class="modal-subtitle">Send payment to the following WAMD account</p>
+
+                <div class="modal-wamd-details">
+                    <div class="modal-detail-row">
+                        <span>Account Number</span>
+                        <div class="modal-detail-value">
+                            <strong id="modal-wamd-number">94091673</strong>
+                            <button class="btn-copy-modal" id="copy-modal-number">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-detail-row">
+                        <span>Account Name</span>
+                        <strong>MOHAMMAD RIZWAN</strong>
+                    </div>
+                    <div class="modal-detail-row modal-total">
+                        <span>Amount</span>
+                        <strong id="modal-amount">0.000 KD</strong>
+                    </div>
+                </div>
+
+                <div class="modal-upload">
+                    <h4>Upload Payment Screenshot</h4>
+                    <div class="modal-upload-area" id="modal-upload-area">
+                        <input type="file" id="modal-file-input" accept="image/*" hidden>
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Click or drag to upload</p>
+                    </div>
+                    <div class="modal-preview" id="modal-preview" style="display:none;">
+                        <img id="modal-preview-img" src="" alt="Preview">
+                        <button type="button" class="btn-remove-image" id="modal-remove-image">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-heart"></i> PLEASURE STORE
+                    </a>
+                    <p>Premium adult products with discreet delivery across Kuwait.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="men.html">Men</a></li>
+                        <li><a href="women.html">Women</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="contact-list">
+                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/96594091673" target="_blank">+965 94091673</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@kwtnews.com">info@kwtnews.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pleasure Store Kuwait. All rights reserved. 18+ Only</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="data/products-men.js"></script>
+    <script src="data/products-women.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/payment.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/whatsapp.js"></script>
+</body>
+</html>

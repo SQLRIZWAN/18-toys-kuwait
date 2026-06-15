@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order Confirmed - Pleasure Store Kuwait. Your order has been placed successfully.">
+    <meta name="theme-color" content="#e91e63">
+    <title>Order Confirmed | Pleasure Store Kuwait</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 50%, #e8eaf6 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            color: #e91e63;
+            font-size: 1.8rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        .logo-text {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo-text span {
+            color: #e91e63;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #e91e63;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #e91e63;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .cart-icon {
+            position: relative;
+            color: #fff;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #e91e63;
+            color: #fff;
+            font-size: 0.7rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .success-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* Success Header */
+        .success-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .success-checkmark {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            animation: successPulse 2s ease-in-out infinite;
+            box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+        }
+
+        .success-checkmark i {
+            font-size: 3.5rem;
+            color: #fff;
+            animation: checkBounce 0.8s ease-out;
+        }
+
+        .success-header h1 {
+            font-size: 2.5rem;
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .success-header p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .order-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+        }
+
+        /* Order Timeline */
+        .order-timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .order-timeline::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: #ddd;
+        }
+
+        .timeline-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .timeline-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .timeline-step.active .timeline-icon {
+            background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+            animation: activePulse 2s ease-in-out infinite;
+        }
+
+        .timeline-step.pending .timeline-icon {
+            background: #e0e0e0;
+            color: #999;
+        }
+
+        .timeline-step .label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #666;
+            text-align: center;
+        }
+
+        .timeline-step.active .label {
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        /* Order Details Card */
+        .order-details-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .card-title i {
+            color: #e91e63;
+        }
+
+        .product-info {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: #fafafa;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .product-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            object-fit: cover;
+            background: #e0e0e0;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-details h3 {
+            font-size: 1.2rem;
+            color: #1a1a2e;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-details .product-name-ar {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0.75rem;
+            direction: rtl;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .meta-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .meta-value.total {
+            color: #e91e63;
+            font-size: 1.2rem;
+        }
+
+        .info-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .info-block {
+            padding: 1.25rem;
+            background: #fafafa;
+            border-radius: 12px;
+            border-left: 4px solid #e91e63;
+        }
+
+        .info-block h4 {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-block p {
+            color: #333;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-block .ar-text {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            padding: 0.5rem 1rem;
+            background: #e91e63;
+            color: #fff;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .map-btn:hover {
+            background: #c2185b;
+            transform: translateY(-2px);
+        }
+
+        .payment-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #fff3e0;
+            color: #f57c00;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        .payment-status i {
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        .screenshot-preview {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 12px;
+            border: 2px dashed #e0e0e0;
+        }
+
+        .screenshot-preview img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 8px;
+        }
+
+        /* Important Notice */
+        .notice-box {
+            background: linear-gradient(135deg, #fff8e1 0%, #fff3e0 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 2px solid #ffd54f;
+        }
+
+        .notice-box h3 {
+            font-size: 1.2rem;
+            color: #f57c00;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .notice-box h3 i {
+            font-size: 1.3rem;
+        }
+
+        .notice-steps {
+            list-style: none;
+        }
+
+        .notice-steps li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+        }
+
+        .notice-steps li:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            width: 28px;
+            height: 28px;
+            background: #f57c00;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1.25rem 2rem;
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-whatsapp i {
+            font-size: 1.3rem;
+        }
+
+        .btn-secondary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: #fff;
+            color: #333;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            border-color: #e91e63;
+            color: #e91e63;
+            transform: translateY(-2px);
+        }
+
+        .btn-track {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-track:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26, 26, 46, 0.3);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            text-decoration: none;
+            z-index: 1000;
+            animation: whatsappPulse 2s ease-in-out infinite;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #e91e63;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: #e91e63;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: #e91e63;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        /* Tracking Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: modalSlide 0.3s ease-out;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-header h3 {
+            font-size: 1.3rem;
+            color: #1a1a2e;
+        }
+
+        .modal-close {
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: #f0f0f0;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: #e91e63;
+            color: #fff;
+        }
+
+        .tracking-info {
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .tracking-info .order-id {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #e91e63;
+            margin-bottom: 1rem;
+        }
+
+        .tracking-status {
+            padding: 1rem;
+            background: #f0f9ff;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .tracking-status h4 {
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .tracking-status p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .tracking-contact {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .tracking-contact a {
+            color: #e91e63;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Animations */
+        @keyframes successPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 20px rgba(76, 175, 80, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+            }
+        }
+
+        @keyframes checkBounce {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes activePulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(76, 175, 80, 0.6); }
+        }
+
+        @keyframes whatsappPulse {
+            0%, 100% {
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 6px 30px rgba(37, 211, 102, 0.7), 0 0 0 15px rgba(37, 211, 102, 0.1);
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @keyframes modalSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .success-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .order-timeline {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .order-timeline::before {
+                display: none;
+            }
+
+            .timeline-step {
+                flex: none;
+                width: calc(50% - 0.5rem);
+            }
+
+            .product-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .product-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .info-section {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                gap: 0.75rem;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 1.7rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .success-container {
+                padding: 1.5rem 1rem;
+            }
+
+            .success-checkmark {
+                width: 90px;
+                height: 90px;
+            }
+
+            .success-checkmark i {
+                font-size: 2.5rem;
+            }
+
+            .success-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .success-header p {
+                font-size: 1rem;
+            }
+
+            .order-number {
+                font-size: 0.95rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .order-details-card {
+                padding: 1.25rem;
+            }
+
+            .timeline-step {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <i class="fas fa-heart logo-icon"></i>
+                <span class="logo-text">PLEASURE <span>STORE</span></span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products-men.html">Men</a></li>
+                    <li><a href="products-women.html">Women</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="success-container">
+        <!-- Success Header -->
+        <div class="success-header">
+            <div class="success-checkmark">
+                <i class="fas fa-check"></i>
+            </div>
+            <h1>Order Confirmed!</h1>
+            <p>Thank you for your order</p>
+            <div class="order-number" id="order-number">ORD-XXXXX</div>
+        </div>
+
+        <!-- Order Timeline -->
+        <div class="order-timeline">
+            <div class="timeline-step active">
+                <div class="timeline-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <span class="label">Order Placed</span>
+            </div>
+            <div class="timeline-step pending">
+                <div class="timeline-icon">
+                    <i class="fas fa-cog"></i>
+                </div>
+                <span class="label">Processing</span>
+            </div>
+            <div class="timeline-step pending">
+                <div class="timeline-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <span class="label">Shipped</span>
+            </div>
+            <div class="timeline-step pending">
+                <div class="timeline-icon">
+                    <i class="fas fa-box-open"></i>
+                </div>
+                <span class="label">Delivered</span>
+            </div>
+        </div>
+
+        <!-- Order Details Card -->
+        <div class="order-details-card">
+            <h2 class="card-title">
+                <i class="fas fa-receipt"></i>
+                Order Details
+            </h2>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <img src="" alt="Product" class="product-image" id="product-image">
+                <div class="product-details">
+                    <h3 id="product-name">Product Name</h3>
+                    <p class="product-name-ar" id="product-name-ar">اسم المنتج</p>
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Quantity</span>
+                            <span class="meta-value" id="product-qty">1</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Price</span>
+                            <span class="meta-value" id="product-price">0.000 KD</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Total</span>
+                            <span class="meta-value total" id="product-total">0.000 KD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer & Delivery Info -->
+            <div class="info-section">
+                <div class="info-block">
+                    <h4><i class="fas fa-user"></i> Customer Info</h4>
+                    <p id="customer-name">Name</p>
+                    <p id="customer-phone">Phone</p>
+                    <p id="customer-email">Email</p>
+                </div>
+                <div class="info-block">
+                    <h4><i class="fas fa-map-marker-alt"></i> Delivery Address</h4>
+                    <p id="delivery-address">Address</p>
+                    <p class="ar-text" id="delivery-address-ar"></p>
+                    <a href="#" class="map-btn" id="map-link" target="_blank">
+                        <i class="fas fa-map-marked-alt"></i>
+                        View on Map
+                    </a>
+                </div>
+            </div>
+
+            <!-- Payment Info -->
+            <div class="info-section" style="margin-top: 1rem;">
+                <div class="info-block">
+                    <h4><i class="fas fa-credit-card"></i> Payment Info</h4>
+                    <p>Method: <strong>WAMD</strong></p>
+                    <p>Transaction ID: <strong id="txn-id">N/A</strong></p>
+                    <div class="payment-status">
+                        <i class="fas fa-clock"></i>
+                        Pending Verification
+                    </div>
+                </div>
+                <div class="info-block" id="screenshot-block" style="display: none;">
+                    <h4><i class="fas fa-image"></i> Payment Screenshot</h4>
+                    <div class="screenshot-preview">
+                        <img src="" alt="Payment Screenshot" id="screenshot-preview">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Important Notice -->
+        <div class="notice-box">
+            <h3>
+                <i class="fas fa-info-circle"></i>
+                What happens next?
+            </h3>
+            <ul class="notice-steps">
+                <li>
+                    <span class="step-number">1</span>
+                    <span class="step-text">We will verify your payment within <strong>1-2 hours</strong></span>
+                </li>
+                <li>
+                    <span class="step-number">2</span>
+                    <span class="step-text">You will receive confirmation on <strong>WhatsApp</strong></span>
+                </li>
+                <li>
+                    <span class="step-number">3</span>
+                    <span class="step-text">Your order will be dispatched within <strong>24 hours</strong></span>
+                </li>
+                <li>
+                    <span class="step-number">4</span>
+                    <span class="step-text">Delivery within <strong>1-3 business days</strong> in Kuwait</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <a href="#" class="btn-whatsapp" id="share-whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                Share Order on WhatsApp
+            </a>
+            <a href="index.html" class="btn-secondary">
+                <i class="fas fa-shopping-bag"></i>
+                Continue Shopping
+            </a>
+            <button class="btn-track" id="track-order-btn">
+                <i class="fas fa-shipping-fast"></i>
+                Track Order
+            </button>
+        </div>
+    </main>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/96594091673" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Tracking Modal -->
+    <div class="modal-overlay" id="tracking-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Track Your Order</h3>
+                <button class="modal-close" id="modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="tracking-info">
+                <p class="order-id" id="tracking-order-id">ORD-XXXXX</p>
+                <div class="tracking-status">
+                    <h4>Current Status</h4>
+                    <p id="tracking-status-text">Order Placed - Awaiting verification</p>
+                </div>
+                <p class="tracking-contact">
+                    Questions? Contact us on <a href="https://wa.me/96594091673" target="_blank">WhatsApp</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Pleasure Store Kuwait - Your trusted destination for premium adult products with discreet delivery across Kuwait.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="products-men.html">Men's Products</a>
+                <a href="products-women.html">Women's Products</a>
+                <a href="cart.html">Shopping Cart</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: +965 94091673</p>
+                <p><i class="fas fa-wallet"></i> WAMD: 94091673</p>
+                <p><i class="fas fa-user"></i> MOHAMMAD RIZWAN</p>
+                <p><i class="fas fa-map-marker-alt"></i> Kuwait</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pleasure Store Kuwait. All rights reserved. | kwtnews.com</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/products-men.js"></script>
+    <script src="data/products-women.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get order ID from URL params
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('id');
+
+            if (!orderId) {
+                // Generate a random order ID if none provided
+                const randomId = 'ORD-' + Math.random().toString(36).substring(2, 7).toUpperCase();
+                document.getElementById('order-number').textContent = randomId;
+                document.getElementById('tracking-order-id').textContent = randomId;
+            } else {
+                document.getElementById('order-number').textContent = orderId;
+                document.getElementById('tracking-order-id').textContent = orderId;
+            }
+
+            // Load order data from localStorage
+            const orderData = JSON.parse(localStorage.getItem('currentOrder')) || {};
+
+            // Populate order details
+            if (orderData.productName) {
+                document.getElementById('product-name').textContent = orderData.productName;
+                document.getElementById('product-name-ar').textContent = orderData.productNameAr || '';
+                document.getElementById('product-image').src = orderData.productImage || '';
+                document.getElementById('product-qty').textContent = orderData.quantity || 1;
+                document.getElementById('product-price').textContent = (orderData.price || '0.000') + ' KD';
+                document.getElementById('product-total').textContent = (orderData.total || '0.000') + ' KD';
+            }
+
+            if (orderData.customerName) {
+                document.getElementById('customer-name').textContent = orderData.customerName;
+            }
+            if (orderData.phone) {
+                document.getElementById('customer-phone').textContent = orderData.phone;
+            }
+            if (orderData.email) {
+                document.getElementById('customer-email').textContent = orderData.email;
+            } else {
+                document.getElementById('customer-email').style.display = 'none';
+            }
+
+            if (orderData.address) {
+                document.getElementById('delivery-address').textContent = orderData.address;
+            }
+            if (orderData.addressAr) {
+                document.getElementById('delivery-address-ar').textContent = orderData.addressAr;
+            }
+            if (orderData.latitude && orderData.longitude) {
+                const mapUrl = `https://www.google.com/maps?q=${orderData.latitude},${orderData.longitude}`;
+                document.getElementById('map-link').href = mapUrl;
+            } else {
+                document.getElementById('map-link').style.display = 'none';
+            }
+
+            if (orderData.txnId) {
+                document.getElementById('txn-id').textContent = orderData.txnId;
+            }
+
+            if (orderData.screenshot) {
+                document.getElementById('screenshot-block').style.display = 'block';
+                document.getElementById('screenshot-preview').src = orderData.screenshot;
+            }
+
+            // WhatsApp Share
+            const shareBtn = document.getElementById('share-whatsapp');
+            shareBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const currentOrderId = document.getElementById('order-number').textContent;
+                const productName = document.getElementById('product-name').textContent;
+                const qty = document.getElementById('product-qty').textContent;
+                const total = document.getElementById('product-total').textContent;
+                const name = document.getElementById('customer-name').textContent;
+                const address = document.getElementById('delivery-address').textContent;
+                const txnId = document.getElementById('txn-id').textContent;
+                const timestamp = new Date().toLocaleString('en-KW');
+
+                const message = encodeURIComponent(
+                    `🛒 NEW ORDER CONFIRMED\n\n` +
+                    `📋 Order ID: ${currentOrderId}\n\n` +
+                    `👤 Customer: ${name}\n` +
+                    `📱 Phone: ${orderData.phone || 'N/A'}\n` +
+                    `📍 Address: ${address}\n\n` +
+                    `📦 Product: ${productName}\n` +
+                    `🔢 Quantity: ${qty}\n` +
+                    `💰 Total: ${total}\n\n` +
+                    `💳 Payment: WAMD\n` +
+                    `🔢 Transaction ID: ${txnId}\n\n` +
+                    `⏰ Time: ${timestamp}`
+                );
+
+                window.open(`https://wa.me/96594091673?text=${message}`, '_blank');
+            });
+
+            // Track Order Modal
+            const trackBtn = document.getElementById('track-order-btn');
+            const modal = document.getElementById('tracking-modal');
+            const closeBtn = document.getElementById('modal-close');
+
+            trackBtn.addEventListener('click', function() {
+                modal.classList.add('active');
+            });
+
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('active');
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+
+            // Update cart count
+            if (typeof updateCartCount === 'function') {
+                updateCartCount();
+            }
+        });
+    </script>
+</body>
+</html>
