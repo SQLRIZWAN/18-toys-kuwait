@@ -242,15 +242,6 @@
             </div>
         </section>
 
-        <section class="age-notice section">
-            <div class="container">
-                <div class="age-notice__content">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <p>This website contains age-restricted content. By entering, you confirm you are at least <strong>18 years old</strong>.</p>
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <footer class="footer">
@@ -304,5 +295,26 @@
     <script src="js/app.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/reviews.js"></script>
+
+    <!-- Back Button Float -->
+    <button class="back-btn-float" id="backBtn" onclick="goBack()" style="display:none;">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+    <script>
+        (function() {
+            var page = window.location.pathname;
+            var backBtn = document.getElementById('backBtn');
+            if (backBtn && page !== '/' && page !== '/index.html' && !page.endsWith('index.html')) {
+                backBtn.style.display = 'flex';
+            }
+        })();
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
 </body>
 </html>

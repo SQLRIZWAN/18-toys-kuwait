@@ -526,5 +526,19 @@
     <script src="js/payment.js"></script>
     <script src="js/map.js"></script>
     <script src="js/whatsapp.js"></script>
+
+    <!-- Back Button Float -->
+    <button class="back-btn-float" id="backBtn" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+    <script>
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
 </body>
 </html>

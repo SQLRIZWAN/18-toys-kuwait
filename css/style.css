@@ -1821,6 +1821,45 @@ ul {
     }
 }
 
+/* ============================================
+   BACK BUTTON FLOAT
+   ============================================ */
+.back-btn-float {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--dark-card);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 998;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.back-btn-float:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+    .back-btn-float {
+        width: 45px;
+        height: 45px;
+        bottom: 90px;
+        right: 20px;
+        font-size: 1rem;
+    }
+}
+
 /* Toast notifications */
 .toast {
     position: fixed;

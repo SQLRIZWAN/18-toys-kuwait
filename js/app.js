@@ -7,6 +7,45 @@ document.addEventListener('DOMContentLoaded', function() {
         setupMobileMenu();
         renderFeaturedProducts();
         setupHeaderScroll();
+        setupBackButton();
+    }
+
+    // Hardware back button support
+    function setupBackButton() {
+        // Push initial state
+        history.pushState(null, null, location.href);
+
+        window.addEventListener('popstate', function(event) {
+            // Check if age modal is open
+            var ageModal = document.getElementById('ageModal');
+            if (ageModal && ageModal.style.display !== 'none') {
+                // If age modal is open, exit site
+                window.location.href = 'https://www.google.com';
+                return;
+            }
+
+            // Check if cart modal is open
+            var cartModal = document.querySelector('.cart-modal.open');
+            if (cartModal) {
+                cartModal.classList.remove('open');
+                history.pushState(null, null, location.href);
+                return;
+            }
+
+            // Check if mobile menu is open
+            var mobileNav = document.getElementById('mobile-nav');
+            if (mobileNav && mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                history.pushState(null, null, location.href);
+                return;
+            }
+
+            // Default: go to home page
+            var currentPage = window.location.pathname;
+            if (currentPage !== '/' && currentPage !== '/index.html' && !currentPage.endsWith('index.html')) {
+                window.location.href = 'index.html';
+            }
+        });
     }
 
     // Cart count update
