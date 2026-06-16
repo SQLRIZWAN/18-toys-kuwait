@@ -1,63 +1,27 @@
-// Products for Men
-const productsMen = [
-    {
-        id: 'm1',
-        name: 'Premium Vibrator',
-        price: 25.000,
-        image: 'https://via.placeholder.com/300x300/e91e63/ffffff?text=Product+1',
-        category: 'men',
-        description: 'High-quality silicone vibrator with multiple speed settings.',
-        rating: 4.5,
-        reviews: 128
-    },
-    {
-        id: 'm2',
-        name: 'Realistic Doll',
-        price: 89.000,
-        image: 'https://via.placeholder.com/300x300/9c27b0/ffffff?text=Product+2',
-        category: 'men',
-        description: 'Life-like silicone doll with realistic features.',
-        rating: 4.8,
-        reviews: 256
-    },
-    {
-        id: 'm3',
-        name: 'Male Masturbator',
-        price: 18.500,
-        image: 'https://via.placeholder.com/300x300/e91e63/ffffff?text=Product+3',
-        category: 'men',
-        description: 'Textured sleeve for enhanced pleasure.',
-        rating: 4.3,
-        reviews: 89
-    },
-    {
-        id: 'm4',
-        name: 'Cock Ring Set',
-        price: 12.000,
-        image: 'https://via.placeholder.com/300x300/9c27b0/ffffff?text=Product+4',
-        category: 'men',
-        description: 'Set of 3 adjustable silicone rings.',
-        rating: 4.6,
-        reviews: 167
-    },
-    {
-        id: 'm5',
-        name: 'Prostate Massager',
-        price: 22.000,
-        image: 'https://via.placeholder.com/300x300/e91e63/ffffff?text=Product+5',
-        category: 'men',
-        description: 'Ergonomic design for targeted stimulation.',
-        rating: 4.7,
-        reviews: 134
-    },
-    {
-        id: 'm6',
-        name: 'Penis Pump',
-        price: 35.000,
-        image: 'https://via.placeholder.com/300x300/9c27b0/ffffff?text=Product+6',
-        category: 'men',
-        description: 'Vacuum pump with pressure gauge.',
-        rating: 4.4,
-        reviews: 98
-    }
+const MEN_PRODUCTS = [
+  {id:"m1",name:"Silicone Male Masturbator",nameAr:"عادم رجالي سيليكون",category:"men",price:12,originalPrice:18,description:"Premium silicone male masturbator with realistic internal texture. Waterproof, easy to clean.",descriptionAr:"عادم رجالي سيليكون ممتاز مع نسيج داخلي واقعي. مقاوم للماء، سهل التنظيف.",images:["images/products/men/m1-1.jpg","images/products/men/m1-2.jpg","images/products/men/m1-3.jpg","images/products/men/m1-4.jpg"],rating:4.5,reviewCount:128,inStock:true,features:["Body-safe silicone","Waterproof IPX7","Easy to clean","Discreet packaging"]},
+  {id:"m2",name:"Vibrating Cock Ring",nameAr:"خاتم اهتزاز",category:"men",price:8,originalPrice:12,description:"Powerful vibrating cock ring for enhanced pleasure. Multiple vibration modes.",descriptionAr:"خاتم اهتزاز قوي للمتعة المحسنة. أوضاع اهتزاز متعددة.",images:["images/products/men/m2-1.jpg","images/products/men/m2-2.jpg","images/products/men/m2-3.jpg","images/products/men/m2-4.jpg"],rating:4.3,reviewCount:89,inStock:true,features:["10 vibration modes","USB rechargeable","Medical grade silicone","Waterproof"]},
+  {id:"m3",name:"Automatic Male Stroker",nameAr:"جهاز رجالي أوتوماتيكي",category:"men",price:18,originalPrice:25,description:"Automatic rotating and vibrating male stroker with 10 speeds. Quiet motor.",descriptionAr:"جهاز رجالي أوتوماتيكي بالدوران والاهتزاز بسرعة 10. محرك هادئ.",images:["images/products/men/m3-1.jpg","images/products/men/m3-2.jpg","images/products/men/m3-3.jpg","images/products/men/m3-4.jpg"],rating:4.7,reviewCount:203,inStock:true,features:["10 rotation speeds","Vibrating function","Quiet motor","USB rechargeable"]},
+  {id:"m4",name:"Penis Pump Vacuum",nameAr:"مضخة القضيب بالفراغ",category:"men",price:15,originalPrice:22,description:"Adjustable vacuum penis pump with pressure gauge. Medical grade.",descriptionAr:"مضخة قضيب بالفراغ قابلة للتعديل مع مقياس الضغط. طبي.",images:["images/products/men/m4-1.jpg","images/products/men/m4-2.jpg","images/products/men/m4-3.jpg","images/products/men/m4-4.jpg"],rating:4.2,reviewCount:67,inStock:true,features:["Pressure gauge","Adjustable suction","Medical grade","Comfortable grip"]},
+  {id:"m5",name:"Prostate Massager",nameAr:"مساج البروستاتا",category:"men",price:16,originalPrice:24,description:"Ergonomic prostate massager with remote control. 10 vibration patterns.",descriptionAr:"مساج بروستاتا مريح مع التحكم عن بُعد. 10 أنماط اهتزاز.",images:["images/products/men/m5-1.jpg","images/products/men/m5-2.jpg","images/products/men/m5-3.jpg","images/products/men/m5-4.jpg"],rating:4.6,reviewCount:156,inStock:true,features:["Remote control","10 vibration patterns","Ergonomic design","Rechargeable"]},
+  {id:"m6",name:"Male Extension Sleeve",nameAr:"كم إضافة رجالي",category:"men",price:10,originalPrice:15,description:"Realistic penis extension sleeve with veins texture. Soft silicone.",descriptionAr:"كم إضافة قضيب واقعي مع نسيج الأوردة. سيليكون ناعم.",images:["images/products/men/m6-1.jpg","images/products/men/m6-2.jpg","images/products/men/m6-3.jpg","images/products/men/m6-4.jpg"],rating:4.1,reviewCount:94,inStock:true,features:["Realistic veins","Adds 2 inches","Soft silicone","Stretchable"]},
+  {id:"m7",name:"Cock Cage Lock",nameAr:"قفص القضيب",category:"men",price:14,originalPrice:20,description:"Adjustable penis cage with lock and key. Breathable design.",descriptionAr:"قفص قضيب قابل للتعديل مع القفل والمفتاح. تصميم قابل للتنفس.",images:["images/products/men/m7-1.jpg","images/products/men/m7-2.jpg","images/products/men/m7-3.jpg","images/products/men/m7-4.jpg"],rating:4.4,reviewCount:78,inStock:true,features:["Lock and key","Adjustable sizes","Breathable","Medical resin"]},
+  {id:"m8",name:"Anal Beads Set",nameAr:"مجموعة كريات شرجية",category:"men",price:9,originalPrice:14,description:"Silicone anal beads with graduated sizes. Smooth texture.",descriptionAr:"كريات شرجية سيليكون بأحجام متدرجة. نسيج ناعم.",images:["images/products/men/m8-1.jpg","images/products/men/m8-2.jpg","images/products/men/m8-3.jpg","images/products/men/m8-4.jpg"],rating:4.3,reviewCount:112,inStock:true,features:["Graduated sizes","Body-safe silicone","Easy to clean","Flexible"]},
+  {id:"m9",name:"Bullet Vibrator for Men",nameAr:"اهتزاز رصاصة للرجال",category:"men",price:8,originalPrice:12,description:"Compact bullet vibrator for targeted stimulation. 10 modes.",descriptionAr:"اهتزاز رصاصة مدمج للتحفيز المستهدف. 10 أوضاع.",images:["images/products/men/m9-1.jpg","images/products/men/m9-2.jpg","images/products/men/m9-3.jpg","images/products/men/m9-4.jpg"],rating:4.0,reviewCount:56,inStock:true,features:["Compact size","10 modes","Waterproof","Whisper quiet"]},
+  {id:"m10",name:"Fleshlight Original",nameAr:"فليشلايت الأصلي",category:"men",price:19,originalPrice:28,description:"Original Fleshlight male masturbator. SuperSkin material.",descriptionAr:"عادم الذكور الأصلي فليشلايت. مادة SuperSkin.",images:["images/products/men/m10-1.jpg","images/products/men/m10-2.jpg","images/products/men/m10-3.jpg","images/products/men/m10-4.jpg"],rating:4.8,reviewCount:312,inStock:true,features:["SuperSkin material","Realistic texture","Discreet case","Reusable"]},
+  {id:"m11",name:"Ball Stretcher Set",nameAr:"مجموعة مشد الكريات",category:"men",price:11,originalPrice:16,description:"Adjustable ball stretcher set with 3 sizes. Silicone material.",descriptionAr:"مجموعة مشد كريات قابلة للتعديل بثلاثة أحجام. سيليكون.",images:["images/products/men/m11-1.jpg","images/products/men/m11-2.jpg","images/products/men/m11-3.jpg","images/products/men/m11-4.jpg"],rating:4.2,reviewCount:45,inStock:true,features:["3 sizes included","Soft silicone","Adjustable","Comfortable"]},
+  {id:"m12",name:"Vibrating Anal Plug",nameAr:"قابض شرجي بالاهتزاز",category:"men",price:13,originalPrice:19,description:"Remote control vibrating anal plug. 10 vibration patterns.",descriptionAr:"قابض شرجي بالاهتزاز مع التحكم عن بُعد. 10 أنماط.",images:["images/products/men/m12-1.jpg","images/products/men/m12-2.jpg","images/products/men/m12-3.jpg","images/products/men/m12-4.jpg"],rating:4.5,reviewCount:98,inStock:true,features:["Remote control","10 patterns","Flared base","Rechargeable"]},
+  {id:"m13",name:"Penis Pump Electric",nameAr:"مضخة القضيب الكهربائية",category:"men",price:20,originalPrice:30,description:"Electric automatic penis pump with digital display.",descriptionAr:"مضخة قضيب كهربائية أوتوماتيكية مع شاشة رقمية.",images:["images/products/men/m13-1.jpg","images/products/men/m13-2.jpg","images/products/men/m13-3.jpg","images/products/men/m13-4.jpg"],rating:4.4,reviewCount:87,inStock:true,features:["Digital display","Auto shut-off","Multiple levels","USB rechargeable"]},
+  {id:"m14",name:"Male G-Spot Stimulator",nameAr:"محفز نقطة G للرجال",category:"men",price:14,originalPrice:21,description:"Targeted prostate stimulator. Ergonomic design, powerful vibrations.",descriptionAr:"محفز البروستاتا المستهدف. تصميم مريح، اهتزاز قوي.",images:["images/products/men/m14-1.jpg","images/products/men/m14-2.jpg","images/products/men/m14-3.jpg","images/products/men/m14-4.jpg"],rating:4.6,reviewCount:134,inStock:true,features:["Targeted stimulation","Ergonomic","Powerful motor","Whisper quiet"]},
+  {id:"m15",name:"Silicone Butt Plug Large",nameAr:"قابض مؤخرة سيليكون كبير",category:"men",price:12,originalPrice:18,description:"Large size silicone butt plug with flared base.",descriptionAr:"قابض مؤخرة سيليكون كبير الحجم مع قاعدة موسعة.",images:["images/products/men/m15-1.jpg","images/products/men/m15-2.jpg","images/products/men/m15-3.jpg","images/products/men/m15-4.jpg"],rating:4.3,reviewCount:76,inStock:true,features:["Large size","Flared base","Body-safe","Smooth finish"]},
+  {id:"m16",name:"Handheld Penis Massager",nameAr:"مساج يدوي للقضيب",category:"men",price:17,originalPrice:25,description:"Multi-function penis massager with rotation and vibration.",descriptionAr:"مساج قضيب متعدد الوظائف بالدوران والاهتزاز.",images:["images/products/men/m16-1.jpg","images/products/men/m16-2.jpg","images/products/men/m16-3.jpg","images/products/men/m16-4.jpg"],rating:4.5,reviewCount:167,inStock:true,features:["20 modes","Rotation function","Waterproof","Medical silicone"]},
+  {id:"m17",name:"Male Edge Trainer",nameAr:"مدرس تحسين الرجال",category:"men",price:10,originalPrice:15,description:"Male enhancement trainer with adjustable tension.",descriptionAr:"مدرس تحسين الذكور مع شد قابل للتعديل.",images:["images/products/men/m17-1.jpg","images/products/men/m17-2.jpg","images/products/men/m17-3.jpg","images/products/men/m17-4.jpg"],rating:4.1,reviewCount:52,inStock:true,features:["Adjustable tension","Medical grade","Comfortable","Discreet"]},
+  {id:"m18",name:"Prostate Vibration Massager",nameAr:"مساج البروستاتا بالاهتزاز",category:"men",price:15,originalPrice:22,description:"Advanced prostate massager with app control. 12 patterns.",descriptionAr:"مساج بروستاتا متقدم مع التحكم عبر التطبيق. 12 نمط.",images:["images/products/men/m18-1.jpg","images/products/men/m18-2.jpg","images/products/men/m18-3.jpg","images/products/men/m18-4.jpg"],rating:4.7,reviewCount:189,inStock:true,features:["App control","12 patterns","Long distance","Rechargeable"]},
+  {id:"m19",name:"Male Chastity Device",nameAr:"جهاز عفة رجالي",category:"men",price:16,originalPrice:24,description:"Modern male chastity device with ventilation holes.",descriptionAr:"جهاز عفة رجالي حديث مع ثقوب التهوية.",images:["images/products/men/m19-1.jpg","images/products/men/m19-2.jpg","images/products/men/m19-3.jpg","images/products/men/m19-4.jpg"],rating:4.4,reviewCount:93,inStock:true,features:["Ventilation holes","Lightweight","3 sizes","Secure lock"]},
+  {id:"m20",name:"Double Penis Ring Set",nameAr:"مجموعة خواتم القضيب",category:"men",price:9,originalPrice:14,description:"Set of 3 vibrating cock rings in different sizes.",descriptionAr:"مجموعة 3 خواتم اهتزاز بأحجام مختلفة.",images:["images/products/men/m20-1.jpg","images/products/men/m20-2.jpg","images/products/men/m20-3.jpg","images/products/men/m20-4.jpg"],rating:4.2,reviewCount:68,inStock:true,features:["3 rings included","Different sizes","Stretchy","Vibrating"]},
+  {id:"m21",name:"Realistic Dong Vibrator",nameAr:"dildo اهتزاز واقعي",category:"men",price:14,originalPrice:20,description:"Realistic vibrating dildo with suction cup. 10 modes.",descriptionAr:"dildo اهتزاز واقعي مع مصاصة. 10 أوضاع.",images:["images/products/men/m21-1.jpg","images/products/men/m21-2.jpg","images/products/men/m21-3.jpg","images/products/men/m21-4.jpg"],rating:4.5,reviewCount:145,inStock:true,features:["Suction cup base","10 modes","Realistic veins","Body-safe"]},
+  {id:"m22",name:"Penis Enlargement Cream",nameAr:"كريم تكبير القضيب",category:"men",price:11,originalPrice:16,description:"Natural enlargement cream with herbal extracts.",descriptionAr:"كريم تكبير طبيعي مع مستخلصات عشبية.",images:["images/products/men/m22-1.jpg","images/products/men/m22-2.jpg","images/products/men/m22-3.jpg","images/products/men/m22-4.jpg"],rating:3.9,reviewCount:43,inStock:true,features:["Natural herbs","Easy application","Absorbs quickly","No side effects"]},
+  {id:"m23",name:"Male Delay Spray",nameAr:"رذاذ تأخير رجالي",category:"men",price:8,originalPrice:12,description:"Performance delay spray. Helps last longer.",descriptionAr:"رذاذ تأخير. يساعد في الاستمرار أكثر.",images:["images/products/men/m23-1.jpg","images/products/men/m23-2.jpg","images/products/men/m23-3.jpg","images/products/men/m23-4.jpg"],rating:4.0,reviewCount:78,inStock:true,features:["Fast acting","Discreet packaging","Safe formula","Travel size"]},
+  {id:"m24",name:"Cock Pump Complete Set",nameAr:"مجموعة مضخة القضيب الكاملة",category:"men",price:18,originalPrice:26,description:"Complete penis pump set with 3 cylinders.",descriptionAr:"مجموعة مضخة القضيب الكاملة مع 3 أسطوانات.",images:["images/products/men/m24-1.jpg","images/products/men/m24-2.jpg","images/products/men/m24-3.jpg","images/products/men/m24-4.jpg"],rating:4.3,reviewCount:91,inStock:true,features:["3 cylinders","Hand pump","Extension tubes","Storage bag"]},
+  {id:"m25",name:"Male Masturbator Cup",nameAr:"كوب عادم رجالي",category:"men",price:13,originalPrice:19,description:"Open-ended masturbator cup with textured sleeve.",descriptionAr:"كوب عادم مفتوح الطرف مع كم منسق.",images:["images/products/men/m25-1.jpg","images/products/men/m25-2.jpg","images/products/men/m25-3.jpg","images/products/men/m25-4.jpg"],rating:4.4,reviewCount:112,inStock:true,features:["Open-ended","Textured sleeve","Easy to clean","Discreet design"]}
 ];
