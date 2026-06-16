@@ -86,10 +86,12 @@
         position: static;
     }
 
-    .checkout__grid {
+    .checkout__grid,
+    .checkout-layout {
         grid-template-columns: 1fr;
     }
 
+    .order-summary-sidebar,
     .checkout__summary {
         position: static;
         order: -1;

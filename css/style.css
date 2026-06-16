@@ -1234,10 +1234,13 @@ ul {
     padding: 100px 0 60px;
 }
 
-.checkout__grid {
+.checkout__grid,
+.checkout-layout {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    gap: 40px;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .checkout__steps {
@@ -1301,6 +1304,71 @@ ul {
     color: var(--success);
 }
 
+/* Checkout Step Content */
+.checkout-step {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.checkout-step.active {
+    display: block;
+}
+
+.checkout-step h2,
+.checkout-step h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--text-white);
+}
+
+.checkout-step p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Step navigation buttons */
+.step-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.step-buttons .btn {
+    flex: 1;
+}
+
+/* Checkout form sections */
+.checkout-form-section {
+    background: var(--dark-surface);
+    border-radius: var(--radius);
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.checkout-form-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkout-form-section h3 i {
+    color: var(--primary);
+}
+
 .checkout__form {
     background: var(--dark-card);
     padding: 30px;
@@ -1313,6 +1381,25 @@ ul {
     border-radius: var(--radius);
     position: sticky;
     top: 100px;
+}
+
+.order-summary-sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.order-summary-card {
+    background: var(--dark-card);
+    padding: 25px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.order-summary-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .checkout__summary-item {
