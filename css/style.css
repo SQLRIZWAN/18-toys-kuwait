@@ -1698,6 +1698,122 @@ ul {
     background: var(--dark-card);
 }
 
+/* ============================================
+   AGE VERIFICATION MODAL
+   ============================================ */
+.age-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.age-modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.age-modal__content {
+    position: relative;
+    background: var(--dark-card);
+    border-radius: var(--radius-lg);
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 50px rgba(233, 30, 140, 0.3);
+    animation: fadeIn 0.5s ease;
+}
+
+.age-modal__icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(233, 30, 140, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+}
+
+.age-modal__icon i {
+    font-size: 2.5rem;
+    color: var(--warning);
+}
+
+.age-modal__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-white);
+}
+
+.age-modal__text {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.age-modal__text strong {
+    color: var(--primary);
+}
+
+.age-modal__warning {
+    color: var(--warning);
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.age-modal__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.age-modal__buttons .btn {
+    width: 100%;
+    padding: 16px 30px;
+    font-size: 1.1rem;
+}
+
+.age-modal__logo {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.age-modal__logo i {
+    color: var(--primary);
+}
+
+@media (max-width: 480px) {
+    .age-modal__content {
+        padding: 35px 25px;
+    }
+    
+    .age-modal__title {
+        font-size: 1.4rem;
+    }
+    
+    .age-modal__buttons .btn {
+        padding: 14px 25px;
+        font-size: 1rem;
+    }
+}
+
 /* Toast notifications */
 .toast {
     position: fixed;
