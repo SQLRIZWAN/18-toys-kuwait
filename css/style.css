@@ -28,6 +28,30 @@
     --transition: all 0.3s ease;
     --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
     --gradient-dark: linear-gradient(135deg, var(--dark-bg), var(--dark-surface));
+    
+    /* Additional variables for product-detail page */
+    --color-primary: var(--primary);
+    --color-bg: var(--dark-bg);
+    --color-bg-darker: #120822;
+    --color-bg-card: var(--dark-card);
+    --color-text-primary: var(--text-white);
+    --color-text-secondary: var(--text-light);
+    --color-text-muted: var(--text-muted);
+    --color-success: var(--success);
+    --color-warning: var(--warning);
+    --color-error: var(--error);
+    --border-color-light: rgba(255,255,255,0.1);
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --transition-fast: 0.2s ease;
 }
 
 /* Reset */
